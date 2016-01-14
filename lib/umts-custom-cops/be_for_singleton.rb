@@ -1,6 +1,6 @@
 module RuboCop
   module Cop
-    module CustomCops
+    module UmtsCustomCops
       class BeForSingleton < Cop
         MSG = 'Prefer `be` matcher to `eq` or `eql` for singleton types.'
 

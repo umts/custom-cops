@@ -14,4 +14,4 @@ require "#{rubocop_path}/spec/support/cop_helper"
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'custom-cops'
+require 'umts-custom-cops'

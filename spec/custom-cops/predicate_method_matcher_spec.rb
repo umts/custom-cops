@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RuboCop::Cop::CustomCops::PredicateMethodMatcher do
+describe RuboCop::Cop::UmtsCustomCops::PredicateMethodMatcher do
   let(:cop) { described_class.new }
 
   context 'failure cases' do

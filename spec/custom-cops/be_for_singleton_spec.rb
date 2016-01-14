@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RuboCop::Cop::CustomCops::BeForSingleton do
+describe RuboCop::Cop::UmtsCustomCops::BeForSingleton do
   let(:cop) { described_class.new }
 
   context 'failure cases' do

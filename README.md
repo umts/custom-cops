@@ -1,4 +1,4 @@
-# CustomCops
+# UmtsCustomCops
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/custom-cops`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'custom-cops'
+gem 'umts-custom-cops'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install custom-cops
+    $ gem install umts-custom-cops
 
 ## Usage
 
@@ -36,8 +36,7 @@ To run the spec files, you'll need Rubocop's spec support methods. In order to a
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/custom-cops.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/umts/custom-cops.
 
 ## License
 

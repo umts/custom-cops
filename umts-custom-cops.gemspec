@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'custom-cops/version'
+require 'umts-custom-cops/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "custom-cops"
-  spec.version       = CustomCops::VERSION
+  spec.name          = "umts-custom-cops"
+  spec.version       = UmtsCustomCops::VERSION
   spec.authors       = ["UMass Transit Services"]
   spec.email         = ["transit-it@admin.umass.edu"]
 

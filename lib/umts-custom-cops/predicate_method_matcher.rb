@@ -2,7 +2,7 @@ require 'pry-byebug'
 
 module RuboCop
   module Cop
-    module CustomCops
+    module UmtsCustomCops
       class PredicateMethodMatcher < Cop
         MSG = 'Prefer predicate matcher over checking the return value of a predicate method.'
 
