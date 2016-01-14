@@ -1,5 +1,7 @@
 # UmtsCustomCops
 
+[![Build Status](https://travis-ci.org/umts/custom-cops.svg?branch=master)](https://travis-ci.org/umts/custom-cops)
+
 Custom Rubocops, currently all related to RSpec, used for UMass Transit's internal Rails development purposes.
 
 Primary contributor is @dfaulken.
