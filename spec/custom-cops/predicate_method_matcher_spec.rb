@@ -7,7 +7,8 @@ describe RuboCop::Cop::UmtsCustomCops::PredicateMethodMatcher do
     after :each do
       expect(cop.offenses).not_to be_empty
       expect(cop.offenses.first.line).to be 1
-      expect(cop.messages).to eql ['Prefer predicate matcher over checking the return value of a predicate method.']
+      expect(cop.messages)
+        .to eql ['Prefer predicate matcher over checking the return value of a predicate method.']
     end
 
     it 'finds an expectation with a predicate method and an expected value of true' do
@@ -46,10 +47,10 @@ describe RuboCop::Cop::UmtsCustomCops::PredicateMethodMatcher do
   context 'non-failure cases' do
     after(:each) { expect(cop.offenses).to be_empty }
 
-    it 'skips nodes without expect' do 
+    it 'skips nodes without expect' do
       inspect_source cop, 'stuff.method?.should be true'
     end
-    it 'skips nodes without to or not_to' do 
+    it 'skips nodes without to or not_to' do
       inspect_source cop, 'assert(stuff.method?.eql? true)'
     end
     it 'skips nodes without predicate methods' do
