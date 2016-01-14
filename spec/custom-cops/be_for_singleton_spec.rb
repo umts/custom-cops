@@ -6,6 +6,7 @@ describe RuboCop::Cop::CustomCops::BeForSingleton do
   context 'failure cases' do
     after :each do
       expect(cop.offenses).not_to be_empty
+      expect(cop.offenses.first.line).to be 1
       expect(cop.messages).to eql ['Prefer `be` matcher to `eq` or `eql` for singleton types.']
     end
 
