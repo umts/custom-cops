@@ -26,6 +26,14 @@ describe RuboCop::Cop::CustomCops::BeForSingleton do
   end
 
   context 'autocorrect' do
-    # TODO
+    it 'corrects `eq` to `be`' do
+      expect(autocorrect_source cop, 'expect(stuff).to eq true')
+        .to eql 'expect(stuff).to be true'
+    end
+
+    it 'corrects `eql` to `be`' do
+      expect(autocorrect_source cop, 'expect(stuff).to eql true')
+        .to eql 'expect(stuff).to be true'
+    end
   end
 end
