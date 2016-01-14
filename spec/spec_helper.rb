@@ -1,4 +1,10 @@
 require 'rubocop'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/vendor'
+  refuse_coverage_drop
+end
 
 rubocop_path = File.join(File.dirname(__FILE__), '../vendor/rubocop')
 unless File.directory?(rubocop_path)
