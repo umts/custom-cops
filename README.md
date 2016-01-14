@@ -24,7 +24,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Instructions on adding custom cops.
+Add to your `rubocop.yml`:
+
+    $ require: umts-custom-cops
+
+Or on the command line:
+
+    $ rubocop --require=umts-custom-cops
+
+You may enable/disable them just as with any other cop.
 
 ## Development
 
