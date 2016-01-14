@@ -1,8 +1,8 @@
 # UmtsCustomCops
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/custom-cops`. To experiment with that code, run `bin/console` for an interactive prompt.
+Custom Rubocops, currently all related to RSpec, used for UMass Transit's internal Rails development purposes.
 
-TODO: Delete this and the text above, and describe your gem
+Primary contributor is @dfaulken.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Instructions on adding custom cops.
 
 ## Development
 
@@ -41,4 +41,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/umts/c
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
