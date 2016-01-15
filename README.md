@@ -26,7 +26,9 @@ Or install it yourself as:
 
 Add to your `rubocop.yml`:
 
-    $ require: umts-custom-cops
+```xml
+require: umts-custom-cops
+```
 
 Or on the command line:
 
