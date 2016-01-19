@@ -4,6 +4,8 @@ Custom Rubocops, currently all related to RSpec, used for UMass Transit's intern
 
 Primary contributor is @dfaulken.
 
+A lot of the ideas for this came from some reading of the rubocop source code, so thanks to the RuboCop team for making it public.
+
 [![Build Status](https://travis-ci.org/umts/custom-cops.svg?branch=master)](https://travis-ci.org/umts/custom-cops)
 [![Test Coverage](https://codeclimate.com/github/umts/custom-cops/badges/coverage.svg)](https://codeclimate.com/github/umts/custom-cops/coverage)
 [![Code Climate](https://codeclimate.com/github/umts/custom-cops/badges/gpa.svg)](https://codeclimate.com/github/umts/custom-cops)
