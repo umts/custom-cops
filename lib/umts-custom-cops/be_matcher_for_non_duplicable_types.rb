@@ -12,8 +12,7 @@ module RuboCop
         OFFENSE_TYPE_CHECKS = %i(true_type?
                                  false_type?
                                  nil_type?
-                                 int_type?
-                                 float_type?)
+                                 int_type?)
 
         def autocorrect(node)
           lambda do |corrector|
