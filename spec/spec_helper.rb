@@ -1,12 +1,10 @@
 require 'rubocop'
 require 'simplecov'
-require 'codeclimate-test-reporter'
 
 SimpleCov.start do
   add_filter '/vendor'
   refuse_coverage_drop
 end
-CodeClimate::TestReporter.start
 
 rubocop_path = File.join(File.dirname(__FILE__), '../vendor/rubocop')
 unless File.directory?(rubocop_path)

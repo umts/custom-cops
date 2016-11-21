@@ -5,7 +5,9 @@ rvm:
   - 2.3.0
 env: CODECLIMATE_REPO_TOKEN=c356c22cc5b342d3cba9a1fb9d71b63b52de9b9daa1f54c07f959f90da05c8ff
 before_install: gem install bundler
-script: bundle exec rake
+script: 
+  - bundle exec rake
+  - bundle exec codeclimate-test-reporter
 notifications:
   email:
     recipients:
