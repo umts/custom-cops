@@ -29,7 +29,7 @@ module RuboCop
           return unless %i(eq eql).include? matcher.method_name
           args = matcher.child_nodes.first
           return unless OFFENSE_TYPE_CHECKS.find { |check| args.send check }
-          add_offense node, :expression, MSG
+          add_offense node, location: :expression, message: MSG
         end
       end
     end
