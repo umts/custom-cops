@@ -3,5 +3,5 @@ set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
-gem install bundler -v $(cat .bundler.version)
+gem install bundler -v "$(cat .bundler.version)"
 bundle install
