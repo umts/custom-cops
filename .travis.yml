@@ -9,8 +9,11 @@ env: CODECLIMATE_REPO_TOKEN=c356c22cc5b342d3cba9a1fb9d71b63b52de9b9daa1f54c07f95
 before_install: gem install bundler -v "$(cat .bundler.version)"
 script: 
   - bundle exec rake
+after_success:
   - bundle exec codeclimate-test-reporter
 notifications:
   email:
+    on_success: change
+    on_failure: change
     recipients:
       - transit-it@admin.umass.edu
