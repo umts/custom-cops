@@ -7,13 +7,7 @@ rvm:
   - 2.5.3
   - 2.6.1
 env: CODECLIMATE_REPO_TOKEN=c356c22cc5b342d3cba9a1fb9d71b63b52de9b9daa1f54c07f959f90da05c8ff
-matrix:
-  include:
-    - rvm: 2.1.9
-      env: BUNDLER_VERSION='<2'
-    - rvm: 2.6.1
-      env: BUNDLER_VERSION='>=2'
-before_install: gem install bundler -v $BUNDLER_VERSION
+before_install: gem install bundler -v $(cat .bundler.version)
 script: 
   - bundle exec rake
   - bundle exec codeclimate-test-reporter
