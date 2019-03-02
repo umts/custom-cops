@@ -25,7 +25,7 @@ module RuboCop
             return unless matcher_arg.true_type? || matcher_arg.false_type?
           else return unless BOOLEAN_EQUALITY_MATCHERS.include? matcher.method_name
           end
-          add_offense node, :expression, MSG
+          add_offense node, location: :expression, message: MSG
         end
       end
     end
