@@ -18,6 +18,7 @@ module RuboCop
           expectation = node.child_nodes.first
           return unless expectation.method_name == :expect
           match_value = expectation.child_nodes.first
+          return unless match_value.class == RuboCop::AST::SendNode
           return unless match_value.method_name.to_s.end_with? '?'
           matcher = node.child_nodes[1]
           if GENERIC_EQUALITY_MATCHERS.include? matcher.method_name

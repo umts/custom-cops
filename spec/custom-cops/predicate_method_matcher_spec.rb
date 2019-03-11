@@ -50,6 +50,10 @@ describe RuboCop::Cop::UmtsCustomCops::PredicateMethodMatcher do
     it 'skips nodes without expect' do
       inspect_source 'stuff.method?.should be true'
     end
+    it 'skips any nodes with mocks' do
+      inspect_source 'expect(Object).to receive(:method).and_return object'
+      inspect_source 'expect(Object.method).to receive(:method).and_return object'
+    end
     it 'skips nodes without to or not_to' do
       inspect_source 'assert(stuff.method?.eql? true)'
     end
