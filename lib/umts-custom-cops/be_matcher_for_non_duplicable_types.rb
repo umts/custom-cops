@@ -11,10 +11,15 @@ module RuboCop
       class BeMatcherForNonDuplicableTypes < Cop
         MSG = 'Prefer `be` matcher to `eq` or `eql` for non-duplicable types.'
 
-        OFFENSE_TYPE_CHECKS = %i(true_type?
-                                 false_type?
-                                 nil_type?
-                                 int_type?)
+        def_node_matcher :eq_on_non_duplicable_type?, <<-PATTERN
+          (send
+            _expectation {:to :not_to}
+            (send
+              _context {:eq :eql}
+              {true false nil int}
+            )
+          )
+        PATTERN
 
         def autocorrect(node)
           lambda do |corrector|
@@ -24,13 +29,8 @@ module RuboCop
         end
 
         def on_send(node)
-          return unless %i(to not_to).include? node.method_name
-          return unless node.child_nodes &&
-                        node.child_nodes.first.method_name == :expect
-          matcher = node.child_nodes[1]
-          return unless %i(eq eql).include? matcher.method_name
-          args = matcher.child_nodes.first
-          return unless OFFENSE_TYPE_CHECKS.find { |check| args.send check }
+          return unless eq_on_non_duplicable_type? node
+
           add_offense node, location: :expression, message: MSG
         end
       end
