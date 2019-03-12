@@ -7,6 +7,6 @@ SimpleCov.start do
 end
 
 require 'rubocop/rspec/support'
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'umts-custom-cops'

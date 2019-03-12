@@ -6,10 +6,8 @@ module RuboCop
       # Prefer the easier-to-read be matcher for non-duplicable types.
       #
       # See the specs for examples.
-
-      # rubocop:disable Metrics/AbcSize
       class BeMatcherForNonDuplicableTypes < Cop
-        MSG = 'Prefer `be` matcher to `eq` or `eql` for non-duplicable types.'
+        MSG = 'Prefer `be` matcher to `eq` or `eql` for non-duplicable types.'.freeze
 
         def_node_matcher :eq_on_non_duplicable_type?, <<-PATTERN
           (send

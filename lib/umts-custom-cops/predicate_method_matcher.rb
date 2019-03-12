@@ -5,7 +5,8 @@ module RuboCop
     module UmtsCustomCops
       # See the specs for examples.
       class PredicateMethodMatcher < Cop
-        MSG = 'Prefer predicate matcher over checking the return value of a predicate method.'
+        MESSAGE =
+          'Prefer predicate matcher over checking the return value of a predicate method.'.freeze
 
         def_node_matcher :generic_equality_expectation, <<-PATTERN
         (send
@@ -27,15 +28,13 @@ module RuboCop
         )
         PATTERN
 
-        # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
-        # rubocop:disable Metrics/MethodLength, Metrics/PerceivedComplexity
         def on_send(node)
           ends_with_question_mark = ->(method) { method.to_s.end_with? '?' }
 
           if generic_equality_expectation(node, &ends_with_question_mark) ||
              boolean_equality_expectation(node, &ends_with_question_mark)
 
-            add_offense node, location: :expression, message: MSG
+            add_offense node, location: :expression, message: MESSAGE
           end
         end
       end

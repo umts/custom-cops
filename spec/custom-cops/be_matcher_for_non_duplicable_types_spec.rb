@@ -27,12 +27,12 @@ describe RuboCop::Cop::UmtsCustomCops::BeMatcherForNonDuplicableTypes do
 
   context 'autocorrect' do
     it 'corrects `eq` to `be`' do
-      expect(autocorrect_source 'expect(stuff).to eq true')
+      expect(autocorrect_source('expect(stuff).to eq true'))
         .to eql 'expect(stuff).to be true'
     end
 
     it 'corrects `eql` to `be`' do
-      expect(autocorrect_source 'expect(stuff).to eql true')
+      expect(autocorrect_source('expect(stuff).to eql true'))
         .to eql 'expect(stuff).to be true'
     end
   end
