@@ -1,13 +1,15 @@
 language: ruby
 rvm:
-  - 2.2.10
   - 2.3.8
-  - 2.4.5
-  - 2.5.3
-  - 2.6.1
+  - 2.4.9
+  - 2.5.7
+  - 2.6.5
+  - 2.7.0
 env: CODECLIMATE_REPO_TOKEN=c356c22cc5b342d3cba9a1fb9d71b63b52de9b9daa1f54c07f959f90da05c8ff
-before_install: gem install bundler -v "$(cat .bundler.version)"
-script: 
+before_install:
+  - gem update --system
+  - gem install bundler
+script:
   - bundle exec rake
 after_success:
   - bundle exec codeclimate-test-reporter
