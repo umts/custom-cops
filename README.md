@@ -3,8 +3,6 @@
 Custom Rubocops, currently all related to RSpec, used for UMass Transit's
 internal Rails development purposes.
 
-Primary contributor is @dfaulken.
-
 A lot of the ideas for this came from some reading of the rubocop source
 code, so thanks to the RuboCop team for making it public.
 
