@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
@@ -7,7 +9,7 @@ module RuboCop
       #
       # See the specs for examples.
       class BeMatcherForNonDuplicableTypes < Cop
-        MSG = 'Prefer `be` matcher to `eq` or `eql` for non-duplicable types.'.freeze
+        MSG = 'Prefer `be` matcher to `eq` or `eql` for non-duplicable types.'
 
         def_node_matcher :eq_on_non_duplicable_type?, <<-PATTERN
           (send

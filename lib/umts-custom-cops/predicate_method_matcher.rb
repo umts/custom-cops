@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
@@ -6,7 +8,7 @@ module RuboCop
       # See the specs for examples.
       class PredicateMethodMatcher < Cop
         MESSAGE =
-          'Prefer predicate matcher over checking the return value of a predicate method.'.freeze
+          'Prefer predicate matcher over checking the return value of a predicate method.'
 
         def_node_matcher :generic_equality_expectation, <<-PATTERN
         (send

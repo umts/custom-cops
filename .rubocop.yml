@@ -1,4 +1,9 @@
-Metrics/LineLength:
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 2.5
+
+Layout/LineLength:
   Max: 100
 
 Metrics/BlockLength:
