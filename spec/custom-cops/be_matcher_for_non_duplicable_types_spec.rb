@@ -16,7 +16,6 @@ describe RuboCop::Cop::UmtsCustomCops::BeMatcherForNonDuplicableTypes do
     it('finds an expectation with eql/true') { inspect_source 'expect(stuff).to eql true' }
     it('finds an expectation with false')    { inspect_source 'expect(stuff).to eql false' }
     it('finds an expectation with nil')      { inspect_source 'expect(stuff).not_to eql nil' }
-    it('finds an expectation with a Fixnum') { inspect_source 'expect(stuff).to eql 3' }
   end
 
   context 'non-failure cases' do

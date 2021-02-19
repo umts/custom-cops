@@ -16,7 +16,7 @@ module RuboCop
             _expectation {:to :not_to}
             (send
               _context {:eq :eql}
-              {true false nil int}
+              {true false nil}
             )
           )
         PATTERN
