@@ -15,6 +15,16 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/umts/custom-cops'
   spec.license       = 'MIT'
 
+  spec.post_install_message = <<~PIM
+    umts-custom-cops is no longer under development, and all functionality
+    provided by this gem can also be found in the `rubocop-rspec` gem. See
+    the README file:
+
+    https://github.com/umts/custom-cops/blob/master/README.md
+
+    for migration instructions.
+  PIM
+
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   raise <<~MSG unless spec.respond_to?(:metadata)
