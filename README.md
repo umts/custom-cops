@@ -1,71 +1,37 @@
 # UmtsCustomCops
 
-Custom Rubocops, currently all related to RSpec, used for UMass Transit's
-internal Rails development purposes.
+**This gem is no longer under development.** All of the cops contained in this
+gem are also available in the [rubocop-rspec][rr] gem.
 
-A lot of the ideas for this came from some reading of the rubocop source
-code, so thanks to the RuboCop team for making it public.
+## Migrating to rubocop-rspec
 
-[![Build Status][travis-badge]][travis]
-[![Test Coverage][coverage-badge]][codeclimate]
-[![Code Climate][gpa-badge]][codeclimate]
-[![Issue Count][issue-badge]][codeclimate]
+* Remove `gem 'umts-custom-cops'` from your Gemfile
+* Add `gem 'rubocop-rspec'` to your Gemfile
+* Remove `require: umts-custom-cops` from your `.rubocop.yml` file
+* Add `require: rubocop-rspec` to your `.rubocop.yml` file
 
-## Installation
+If you _only_ want a version of the two cops provided by this gem, you can
+add the following to your `.rubocop.yml` file:
 
-Add this line to your application's Gemfile:
+```yml
+RSpec:
+  Enabled: false
 
-```ruby
-gem 'umts-custom-cops'
+RSpec/BeEql:
+  Enabled: true
+
+RSpec/PredicateMatcher:
+  Enabled: true
 ```
 
-And then execute:
+Also, if you have a custom `.yml` file to get this gem to work under
+CodeClimate, you will not need to do that with `rubocop-rspec`. It is included
+in the CodeClimate engine.
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install umts-custom-cops
-
-## Usage
-
-Add to your `rubocop.yml`:
-
-```xml
-require: umts-custom-cops
-```
-
-Or on the command line:
-
-    $ rubocop --require=umts-custom-cops
-
-You may enable/disable them just as with any other cop.
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run
-`rake spec` to run the tests. You can also run `bin/console` for an interactive
-prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To
-release a new version, update the version number in `version.rb`, and then run
-`bundle exec rake release`, which will create a git tag for the version, push
-git commits and tags, and push the `.gem` file to
-[rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at
-https://github.com/umts/custom-cops.
 
 ## License
 
 The gem is available as open source under the terms of the
 [MIT License](http://opensource.org/licenses/MIT).
 
-[travis]: https://travis-ci.org/umts/custom-cops
-[codeclimate]: https://codeclimate.com/github/umts/custom-cops/coverage
-[travis-badge]: https://travis-ci.org/umts/custom-cops.svg?branch=master
-[coverage-badge]: https://codeclimate.com/github/umts/custom-cops/badges/coverage.svg
-[gpa-badge]: https://codeclimate.com/github/umts/custom-cops/badges/gpa.svg
-[issue-badge]: https://codeclimate.com/github/umts/custom-cops/badges/issue_count.svg
+[rr]: https://github.com/rubocop/rubocop-rspec
